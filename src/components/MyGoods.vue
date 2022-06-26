@@ -5,16 +5,16 @@
         <input type="checkbox" class="custom-control-input" id="input"
         >
         <label class="custom-control-label" for="input">
-          <img src="http://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg" alt="">
+          <img :src="goods.goods_img" alt="">
         </label>
       </div>
     </div>
     <div class="right">
-      <div class="top">商品名字</div>
+      <div class="top">{{goods.goods_name}}</div>
       <div class="bottom">
-        <span class="price">¥ 100</span>
+        <span class="price">¥ {{goods.goods_price}}</span>
         <span>
-            数量组件
+           <MyCount /> 
         </span>
       </div>
     </div>
@@ -22,8 +22,17 @@
 </template>
 
 <script>
+import MyCount from '@/components/MyCount.vue'
 export default {
+  components:{
+    MyCount
+  },
+  props:['goods'],
+  data() {
+    return {
 
+    }
+  }
 }
 </script>
 

@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <MyHeader title='购物车案例'  background='hotpink' color="gold"/>
-    <MyGoods />
+    <MyGoods v-for='item in goodsList' :key='item.goods_id' :goods='item'/>
     <MyFooter />
   </div>
 </template>
@@ -43,7 +43,7 @@ export default {
     box-sizing: border-box;
     padding: 50px 0;
     max-height: 100vh;
-    visibility: auto;
+    overflow: auto;
   }
 </style>>
 
