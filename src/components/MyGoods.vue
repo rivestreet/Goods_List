@@ -2,19 +2,23 @@
   <div class="my-goods-item">
     <div class="left">
       <div class="custom-control custom-checkbox">
-        <input type="checkbox" class="custom-control-input" :id="goods.goods_id"
-        >
+        <input
+          type="checkbox"
+          class="custom-control-input"
+          :id="goods.goods_id"
+          v-model="goods.goods_state"
+        />
         <label class="custom-control-label" :for="goods.goods_id">
-          <img :src="goods.goods_img" alt="">
+          <img :src="goods.goods_img" alt="" />
         </label>
       </div>
     </div>
     <div class="right">
-      <div class="top">{{goods.goods_name}}</div>
+      <div class="top">{{ goods.goods_name }}</div>
       <div class="bottom">
-        <span class="price">¥ {{goods.goods_price}}</span>
+        <span class="price">¥ {{ goods.goods_price }}</span>
         <span>
-           <MyCount :goods="goods"/> 
+          <MyCount :goods="goods" />
         </span>
       </div>
     </div>
@@ -22,18 +26,16 @@
 </template>
 
 <script>
-import MyCount from '@/components/MyCount.vue'
+import MyCount from "@/components/MyCount.vue";
 export default {
-  components:{
-    MyCount
+  components: {
+    MyCount,
   },
-  props:['goods'],
+  props: ["goods"],
   data() {
-    return {
-
-    }
-  }
-}
+    return {};
+  },
+};
 </script>
 
 <style lang="less" scoped>
@@ -58,9 +60,9 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    .top{
-        font-size: 14px;
-        font-weight: 700;
+    .top {
+      font-size: 14px;
+      font-weight: 700;
     }
     .bottom {
       display: flex;
@@ -74,5 +76,4 @@ export default {
     }
   }
 }
-
 </style>
