@@ -42,7 +42,7 @@ export default {
   .app{
     box-sizing: border-box;
     padding: 50px 0;
-    max-height: 100vh;
+    Max-height: 100vh;
     overflow: auto;
   }
 </style>>
